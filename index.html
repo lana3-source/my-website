@@ -632,7 +632,7 @@
 
       /* Heroバナー */
       .hero-banner-wrap { width: 100%; margin: 0 0 28px; }
-      .hero-banner { height: 300px; object-position: center 15%; filter: none; }
+      .hero-banner { height: 350px; object-position: center 20%; filter: blur(1px); }
       .hero-banner-wrap::after { height: 100px; }
       .hero h1 { font-size: 1.4rem; }
       .hero-lead { font-size: 0.9rem; }
@@ -648,9 +648,10 @@
       /* 2カラム → 1カラム */
       .about-body { grid-template-columns: 1fr; }
       .about-photo { height: 200px; }
-      .lawyer-photo img { height: 260px; }
-      .about-sub-photos { flex-direction: row; gap: 10px; }
-      .about-sub-photos img { height: 120px; }
+      .lawyer-photo img { height: 220px; }
+      .about-sub-photos { flex-direction: column; gap: 14px; }
+      .about-sub-photos img { height: 220px; width: 100%; }
+      .about-sub-photos > img:last-child { margin-top: 0; }
       .practice { overflow-x: hidden; }
       .practice-grid { display: flex; flex-direction: column; gap: 10px; }
       .practice-card { width: 100%; padding: 18px 16px; }

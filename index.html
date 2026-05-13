@@ -579,6 +579,39 @@
     }
     .about-block:hover .profile-link-hint { opacity: 1; transform: translateY(0); }
 
+    /* ══════════════════════════════
+       入所した弁護士の声
+    ══════════════════════════════ */
+    .voices { background: var(--white); }
+    .voices-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    .voice-card {
+      background: var(--light-blue); border: 1px solid var(--border-blue); border-top: 4px solid var(--accent);
+      border-radius: 14px; overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .voice-card:hover { box-shadow: 0 8px 32px rgba(12,68,124,0.1); transform: translateY(-3px); }
+    .voice-card-photo {
+      width: 100%; height: 220px;
+      object-fit: cover; object-position: center top;
+      display: block;
+    }
+    .voice-card-body { padding: 24px 26px; }
+    .voice-meta {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+    }
+    .voice-badge {
+      background: var(--navy); color: var(--white);
+      font-size: 0.68rem; font-weight: 700; padding: 3px 10px; border-radius: 4px;
+      white-space: nowrap; letter-spacing: 0.04em;
+    }
+    .voice-name {
+      font-size: 1rem; font-weight: 700; color: var(--navy-dark); letter-spacing: 0.02em;
+    }
+    .voice-text {
+      font-size: 0.875rem; color: var(--text-muted); line-height: 1.85;
+      border-left: 3px solid var(--accent); padding-left: 14px;
+    }
+
     /* ── Responsive ── */
     @media (max-width: 768px) {
       /* ナビ */
@@ -620,6 +653,7 @@
       .practice-card h3 { font-size: 0.9rem; }
       .practice-card p  { font-size: 0.8rem; }
       .vision-cards { grid-template-columns: 1fr; }
+      .voices-grid { grid-template-columns: 1fr; }
       .culture-cards { grid-template-columns: 1fr; }
       .talent-list { grid-template-columns: 1fr; }
       .articles-grid { grid-template-columns: 1fr; }
@@ -776,7 +810,7 @@
           <strong>早期からの裁量：</strong>入所後比較的早い段階で、主任弁護士として案件を担当します。2026年7月に八王子支店を開設予定であり、72期（2019年登録）の弁護士が支店長として着任予定です。将来的に支店を担うキャリアを描きたい方も歓迎します。
         </div>
         <div class="about-note fade-in" data-delay="3">
-          <strong>客員弁護士：</strong>客員弁護士である押久保弁護士は、検事からキャリアをスタートし、その後、法律事務所において企業法務と刑事弁護に注力し、著名な事件を担当してきました。また、米国留学を経て、ニューヨーク州弁護士の資格も取得しております。一般民事系の事務所では珍しい経歴の弁護士です。
+          <strong>客員弁護士：</strong>客員弁護士である押久保公人弁護士は、検事からキャリアをスタートし、その後、法律事務所において企業法務と刑事弁護に注力し、著名な事件を担当してきました。また、米国留学を経て、ニューヨーク州弁護士の資格も取得しております。一般民事系の事務所では珍しい経歴の弁護士です。
         </div>
       </div>
 
@@ -788,7 +822,40 @@
         </figure>
         <div class="about-sub-photos fade-in" data-delay="3">
           <img src="2026_4_2_莨雁兇蜴・134.jpg" alt="事務所の様子" />
-          <img src="2026_4_2_莨雁兇蜴・062.jpg" alt="事務所の様子" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 入所した弁護士の声 ══ -->
+<section class="voices">
+  <div class="section-inner">
+    <div class="section-header fade-in" data-delay="0">
+      <div class="section-tag">Lawyer Voices</div>
+      <h2>入所した弁護士の声</h2>
+    </div>
+
+    <div class="voices-grid">
+      <div class="voice-card fade-in" data-delay="0">
+        <img src="2026_4_2_莨雁兇蜴・032.jpg" alt="四元弁護士" class="voice-card-photo" />
+        <div class="voice-card-body">
+          <div class="voice-meta">
+            <span class="voice-badge">72期 / 2019年登録</span>
+            <span class="voice-name">四元弁護士</span>
+          </div>
+          <p class="voice-text">「前職では全国展開の一般民事系事務所に勤務。移籍後は通常の法律業務に加え、ホームページの改修やコラムの執筆など、事務所運営にも積極的に関わっています。」</p>
+        </div>
+      </div>
+
+      <div class="voice-card fade-in" data-delay="1">
+        <img src="2026_4_2_莨雁兇蜴・062.jpg" alt="濵野弁護士" class="voice-card-photo" />
+        <div class="voice-card-body">
+          <div class="voice-meta">
+            <span class="voice-badge">77期 / 2025年登録</span>
+            <span class="voice-name">濵野弁護士</span>
+          </div>
+          <p class="voice-text">「入所直後から依頼者対応に同席し、自分が主任として案件を担当しました。主任とはいっても、完全に1人で案件処理をしないといけないわけではなく、先輩弁護士が決済担当として見守ってくれます。弊所では、クラウド上で案件の情報を逐一共有しているので、何かあれば先輩からアドバイスをもらえ、相談できる環境でした。」</p>
         </div>
       </div>
     </div>

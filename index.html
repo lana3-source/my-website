@@ -296,23 +296,23 @@
        業務内容
     ══════════════════════════════ */
     .practice { background: var(--white); }
-    .practice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 36px; }
+    .practice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 40px; }
     .practice-card {
       background: var(--light-blue); border: 1px solid var(--border-blue); border-radius: 12px;
-      padding: 26px 22px;
+      padding: 28px 24px;
       transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
     }
     .practice-card:hover { background: #d5e8f8; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(12,68,124,0.08); }
     .practice-card .pc-icon { color: var(--accent); margin-bottom: 14px; }
     .practice-card .pc-icon svg { display: block; }
-    .practice-card h3 { font-size: 0.93rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
-    .practice-card p  { font-size: 0.78rem; color: var(--text-muted); line-height: 1.7; }
+    .practice-card h3 { font-size: 0.93rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .practice-card p  { font-size: 0.82rem; color: var(--text-muted); line-height: 1.75; }
     .practice-other {
       background: var(--light-blue); border: 1px solid var(--border-blue); border-radius: 12px;
-      padding: 24px 28px; margin-bottom: 24px;
+      padding: 28px 28px; margin-bottom: 40px;
     }
     .practice-other h3 {
-      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; color: var(--accent);
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; color: var(--accent);
       text-transform: uppercase; margin-bottom: 14px;
     }
     .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -327,6 +327,54 @@
     }
     .practice-collab .collab-icon { flex-shrink: 0; color: var(--mid-blue); }
     .practice-collab .collab-icon svg { display: block; }
+
+    /* ── practice intro block ── */
+    .practice-intro {
+      background: var(--light-blue); border: 1px solid var(--border-blue); border-left: 4px solid var(--accent);
+      border-radius: 12px; padding: 28px 32px; margin-bottom: 34px;
+    }
+    .practice-intro-main h3 { font-size: 1.05rem; font-weight: 800; color: var(--navy-dark); margin-bottom: 10px; line-height: 1.45; }
+    .practice-intro-main p  { font-size: 0.86rem; color: var(--text-muted); line-height: 1.75; }
+    .pi-label {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); background: var(--white); border: 1px solid var(--border-blue);
+      border-radius: 4px; padding: 2px 10px; display: inline-block; margin-bottom: 10px;
+    }
+    .practice-intro-tags {
+      display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.12fr) minmax(0, 1.32fr); gap: 18px; align-items: flex-start;
+      border-top: 1px solid var(--border-blue); margin-top: 18px; padding-top: 16px;
+    }
+    .pi-group { min-width: 0; }
+    .pi-group:last-child { min-width: 0; }
+    .pi-tag-label, .pi-law-label {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; color: var(--accent);
+      margin-bottom: 7px; margin-top: 0; text-transform: uppercase;
+    }
+    .pi-tags { display: flex; flex-wrap: wrap; gap: 6px; min-width: 0; }
+    .pi-group .pi-tags[style] { display: flex !important; flex-wrap: wrap; }
+    .pi-tag {
+      background: var(--white); border: 1px solid var(--border-blue); border-radius: 20px;
+      padding: 3px 10px; font-size: 0.76rem; color: var(--navy); font-weight: 600;
+    }
+    .pi-tag-law { background: var(--border-blue); color: var(--navy); border-color: var(--mid-blue); }
+
+    /* ── practice collab box ── */
+    .practice-collab-box {
+      display: flex; align-items: center; gap: 20px;
+      background: var(--navy); border-radius: 12px; padding: 26px 32px; margin-bottom: 40px;
+      color: var(--white);
+    }
+    .pcb-icon { flex-shrink: 0; color: var(--mid-blue); }
+    .pcb-icon svg { display: block; }
+    .pcb-body { flex: 1; }
+    .pcb-title { font-size: 0.93rem; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+    .pcb-body p { font-size: 0.82rem; color: rgba(255,255,255,0.82); line-height: 1.75; }
+    .pcb-badges { display: flex; flex-direction: column; gap: 6px; flex-shrink: 0; }
+    .pcb-badge {
+      background: rgba(133,183,235,0.2); border: 1px solid rgba(133,183,235,0.45);
+      color: var(--mid-blue); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em;
+      padding: 5px 14px; border-radius: 20px; text-align: center; white-space: nowrap;
+    }
 
     /* ══════════════════════════════
        ビジョン
@@ -655,11 +703,16 @@
       .about-sub-photos > div img { height: 220px; }
       .about-sub-photos > img:last-child { margin-top: 0; }
       .practice { overflow-x: hidden; }
+      .practice-intro { padding: 24px 20px; }
+      .practice-intro-tags { display: flex; flex-direction: column; gap: 16px; }
+      .practice-collab-box { flex-direction: column; align-items: flex-start; gap: 14px; padding: 20px; }
       .practice-grid { display: flex; flex-direction: column; gap: 10px; }
       .practice-card { width: 100%; padding: 18px 16px; }
       .practice-card[style*="span 3"] { grid-column: unset; }
       .practice-card h3 { font-size: 0.9rem; }
       .practice-card p  { font-size: 0.8rem; }
+      .pi-tags { flex-wrap: wrap; }
+      .tag-cloud { flex-wrap: wrap; }
       .vision-cards { grid-template-columns: 1fr; }
       .voices-grid { grid-template-columns: 1fr; }
       .culture-cards { grid-template-columns: 1fr; }
@@ -835,7 +888,10 @@
             <img src="五月女.jpg" alt="弁護士の写真" style="object-position: 50% 8%;" />
             <p class="sub-photo-caption">三鷹武蔵野オフィス支店長　五月女智昭</p>
           </div>
-          <img src="2026_4_2_莨雁兇蜴・134.jpg" alt="事務所の様子" style="margin-top: 28px;" />
+          <div style="margin-top: 28px;">
+            <img src="嶋田.jpg" alt="調布オフィス所長 嶋田公典" style="object-position: 50% 15%;" />
+            <p class="sub-photo-caption">調布オフィス所長　嶋田公典</p>
+          </div>
         </div>
       </div>
     </div>
@@ -889,7 +945,7 @@
     </div>
 
     <div class="office-photos-grid fade-in" data-delay="1">
-      <img src="2026_4_2_莨雁兇蜴・078.jpg" alt="事務所の様子" />
+      <img src="2026_4_2_莨雁兇蜴・134.jpg" alt="事務所の様子" />
       <img src="2026_4_2_莨雁兇蜴・131.jpg" alt="事務所の様子" />
       <img src="IMG_5017.jpg" alt="事務所の様子" />
     </div>
@@ -952,81 +1008,106 @@
       <p>相続・事業承継・企業法務を中核に、幅広い分野の案件を経験できます。</p>
     </div>
 
-    <div class="practice-grid">
-      <div class="practice-card fade-in" data-delay="0">
-        <div class="pc-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        </div>
-        <h3>相続・遺言</h3>
-        <p>遺言書作成等の生前対策から、遺産分割協議等の紛争案件まで、相続に関わる幅広い業務を担当。</p>
+    <!-- 相続メイン解説ブロック -->
+    <div class="practice-intro fade-in" data-delay="0">
+      <div class="practice-intro-main">
+        <div class="pi-label">CORE PRACTICE</div>
+        <h3>メイン業務は「相続」。その中身は、思っているより広い</h3>
+        <p>当事務所の主力業務は相続です。遺言書の作成・遺産分割・相続放棄といった典型的な相続案件はもちろん、家族信託の設計、事業承継、M&amp;A、廃業支援など、相続と密接に関連する周辺分野まで幅広く取り扱っています。</p>
+        <p style="margin-top: 12px;">相続案件を解決するためには、相続法の知識だけではなく、多分野の法律知識や実務経験も必要になります。たとえば、遺産に不動産が含まれる場合には、必ず相続登記が必要になりますし、遺産の中に同族会社の株式が含まれる場合には、会社法や株式承継に関する知識も求められます。相続人間の財産のやり取りが税法上「みなし贈与」にあたるようなケースも多いため、横断的な知識が必要となります。</p>
       </div>
-      <div class="practice-card fade-in" data-delay="1">
-        <div class="pc-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <div class="practice-intro-tags">
+        <div class="pi-group">
+          <div class="pi-tag-label">相続案件</div>
+          <div class="pi-tags">
+            <span class="pi-tag">遺産分割</span>
+            <span class="pi-tag">相続放棄</span>
+            <span class="pi-tag">遺言書作成</span>
+            <span class="pi-tag">遺留分侵害額請求</span>
+          </div>
         </div>
-        <h3>家族信託</h3>
-        <p>高齢化社会における財産管理・認知症対策として需要が急増している分野。</p>
-      </div>
-      <div class="practice-card fade-in" data-delay="2">
-        <div class="pc-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        <div class="pi-group">
+          <div class="pi-tag-label">隣接業務</div>
+          <div class="pi-tags">
+            <span class="pi-tag">家族信託</span>
+            <span class="pi-tag">任意後見</span>
+            <span class="pi-tag">成年後見</span>
+            <span class="pi-tag">事業承継</span>
+            <span class="pi-tag">M＆A</span>
+            <span class="pi-tag">廃業支援</span>
+          </div>
         </div>
-        <h3>事業承継</h3>
-        <p>中小企業の経営者が直面する後継者問題・株式移転・M&Aを総合的にサポート。</p>
+        <div class="pi-group">
+          <div class="pi-law-label">必要となる法分野</div>
+          <div class="pi-tags">
+            <span class="pi-tag pi-tag-law">相続法</span>
+            <span class="pi-tag pi-tag-law">民法</span>
+            <span class="pi-tag pi-tag-law">会社法</span>
+            <span class="pi-tag pi-tag-law">信託法</span>
+            <span class="pi-tag pi-tag-law">借地借家法</span>
+            <span class="pi-tag pi-tag-law">家事事件手続法</span>
+            <span class="pi-tag pi-tag-law">破産法</span>
+            <span class="pi-tag pi-tag-law">税務・登記の基礎理解</span>
+          </div>
+        </div>
       </div>
-      <div class="practice-card fade-in" data-delay="0">
+    </div>
+
+    <!-- 士業連携ブロック -->
+    <div class="practice-collab-box fade-in" data-delay="1">
+      <div class="pcb-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      </div>
+      <div class="pcb-body">
+        <div class="pcb-title">士業事務所の顧問弁護士として相談に対応</div>
+        <p>司法書士・税理士・社会保険労務士などの士業事務所と顧問契約を結び、各士業の先生方から寄せられる法律相談に対応しています。顧問契約を締結していない士業からのスポットでの相談も多く、一般の相談者だけでなく士業からの相談案件など、多様な案件に触れることができます。</p>
+      </div>
+    </div>
+
+    <!-- 業務カード -->
+    <div class="practice-grid fade-in" data-delay="2">
+      <div class="practice-card">
         <div class="pc-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="2" y1="13" x2="22" y2="13"/></svg>
         </div>
         <h3>中小企業・ベンチャー企業法務</h3>
-        <p>契約書作成・審査、新規事業のリーガルチェック、労務問題など企業法務を一手に担当。</p>
+        <p>中小企業の顧問先も多く、契約書レビュー、労務相談、新規事業のリーガルチェックなど、企業法務も日常的に扱っています。</p>
       </div>
-      <div class="practice-card fade-in" data-delay="1">
+      <div class="practice-card">
         <div class="pc-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
-        <h3>不動産問題</h3>
-        <p>売買・賃貸トラブル・明渡請求・境界問題など不動産に関する紛争・予防法務。</p>
+        <h3>不動産関係</h3>
+        <p>売買・賃貸トラブル、不動産明渡請求などの不動産案件のほか、医療法人の承継や医療機関に関する案件も取り扱います。</p>
       </div>
-      <div class="practice-card fade-in" data-delay="2">
+      <div class="practice-card">
         <div class="pc-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <h3>医療機関の法務・M&A</h3>
-        <p>医療法人の組織再編・事業譲渡を支援。</p>
-      </div>
-      <div class="practice-card fade-in" data-delay="0" style="grid-column: span 3;">
-        <div class="pc-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg>
-        </div>
-        <h3>廃業支援</h3>
-        <p>後継者不在や業績悪化に悩む事業者の廃業手続き・清算・関係者調整を総合的にサポート。税理士・司法書士と連携して対応します。</p>
+        <h3>一般民事</h3>
+        <p>損害賠償請求、債権回収、交渉対応、訴訟対応など、地域の法律事務所として一般民事事件にも幅広く対応します。</p>
       </div>
     </div>
 
-    <div class="practice-other fade-in" data-delay="1">
+    <div class="practice-other fade-in" data-delay="3">
       <h3>その他 経験可能な分野</h3>
       <div class="tag-cloud">
-        <span class="tag">離婚・婚姻費用</span>
-        <span class="tag">債務整理・自己破産</span>
+        <span class="tag">医療法人のM＆A</span>
+        <span class="tag">離婚</span>
+        <span class="tag">債務整理</span>
         <span class="tag">労働問題</span>
-        <span class="tag">損害賠償請求</span>
+        <span class="tag">損害賠償</span>
         <span class="tag">債権回収</span>
         <span class="tag">交通事故</span>
-        <span class="tag">成年後見</span>
+        <span class="tag">失踪宣告</span>
       </div>
     </div>
-
-    <div class="practice-collab fade-in" data-delay="2">
-      <span class="collab-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-      </span>
-      <span>
-        <strong style="color:#ffffff;">税理士・司法書士・社労士との連携案件が豊富。</strong>
-        他士業と協力しながら、依頼者の課題を多角的に解決するチーム型の業務スタイルです。
-      </span>
+    <div class="fade-in" data-delay="4" style="background: var(--white); border: 1px solid var(--border-blue); border-left: 4px solid var(--navy); border-radius: 12px; padding: 24px 28px; box-shadow: 0 4px 18px rgba(12,68,124,0.06);">
+      <div style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px;">YOUR PRACTICE</div>
+      <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--navy-dark); margin-bottom: 10px;">注力分野は、あなたが育てる</h3>
+      <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.8;">上記の取扱事件に加え、所属弁護士が注力したい分野については、事務所として集客を支援する体制があります。実際に、所属弁護士の関心分野をきっかけとして、離婚・労働などの分野にも取り組みを広げています。相続を軸にしながら、自分の関心分野を育てていくことも可能です。</p>
+      <p style="font-size: 0.82rem; color: var(--accent); font-weight: 600; margin-top: 12px;">※ 国選の刑事事件を含め、個人事件は原則自由に受任可能です。</p>
     </div>
-    <p style="font-size: 0.75rem; color: #185FA5; margin-top: 18px; letter-spacing: 0.02em;">※国選の刑事事件を含め、個人事件は原則自由に受任可能です。</p>
   </div>
 </section>
 

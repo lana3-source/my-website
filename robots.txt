@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lana3-source.github.io/my-website/sitemap.xml

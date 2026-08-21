@@ -160,10 +160,20 @@
       max-width: 640px;
       box-shadow: 0 4px 20px rgba(4,44,83,0.12);
     }
+    .hero-contact-card.is-closed {
+      border-left: 4px solid var(--accent);
+    }
     .hero-contact-title {
       font-size: 1rem; font-weight: 600; color: var(--navy-dark);
       padding-bottom: 14px; margin-bottom: 14px;
       border-bottom: 1px solid #B5D4F4;
+    }
+    .closed-status-label {
+      display: inline-block;
+      background: var(--light-blue); border: 1px solid var(--border-blue);
+      color: var(--navy); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.08em; padding: 4px 12px; border-radius: 20px;
+      margin-bottom: 12px;
     }
     .hero-contact-note {
       font-size: 0.9rem; color: #185FA5;
@@ -177,6 +187,14 @@
       transition: background 0.2s;
     }
     .hero-contact-btn:hover { background: #1a5a9e; }
+    .hero-contact-btn.is-disabled,
+    .aci-btn.is-disabled {
+      background: #8BA6BF !important;
+      color: var(--white);
+      cursor: default;
+      pointer-events: none;
+      box-shadow: none;
+    }
     .hero-contact-hint {
       font-size: 0.72rem; color: var(--text-muted);
       margin-top: 8px; letter-spacing: 0.02em;
@@ -487,6 +505,12 @@
     }
     .req-table tr:nth-child(even) td { background: var(--light-blue); }
     .req-table td small { color: var(--text-muted); }
+    .recruitment-closed-note {
+      background: var(--light-blue); border: 1px solid var(--border-blue);
+      border-left: 4px solid var(--accent); border-radius: 12px;
+      padding: 18px 22px; margin-bottom: 24px;
+      color: var(--navy-dark); font-size: 0.9rem; line-height: 1.8;
+    }
     .req-step { display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; }
     .req-step-item {
       background: var(--light-blue); border: 1px solid var(--border-blue); border-radius: 6px;
@@ -544,6 +568,10 @@
     .apply-header { text-align: center; margin-bottom: 48px; }
     .apply-header h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; color: var(--white); margin-bottom: 10px; }
     .apply-header p  { font-size: 0.92rem; color: rgba(255,255,255,0.68); }
+    .apply-header .closed-apply-note {
+      max-width: 680px; margin: 14px auto 0;
+      color: rgba(255,255,255,0.82); line-height: 1.8;
+    }
     .apply-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-bottom: 32px; }
     .apply-card-item {
       background: var(--white); border-radius: 14px;
@@ -746,6 +774,9 @@
       .hero::before, .hero::after { display: none; }
       .tag-cloud .tag, .tool-tag { max-width: 100%; white-space: normal; }
     }
+    .hero-contact-card.is-closed {
+      border-left: 4px solid var(--accent);
+    }
   </style>
 </head>
 <body>
@@ -771,19 +802,19 @@
     <img src="2026_4_2_莨雁兇蜴・020.jpg" alt="しらと総合法律事務所" class="hero-banner" />
   </div>
   <div class="hero-inner">
-    <div class="hero-badge">RECRUITING 2026</div>
-    <h1><em>79期司法修習生・経験弁護士</em> 募集</h1>
+    <div class="hero-badge">2026 RECRUITMENT CLOSED</div>
+    <h1><em>2026年度の募集は終了しました</em></h1>
     <p class="hero-lead">
       調布・三鷹武蔵野・八王子の3拠点で、<strong>相続・事業承継・中小企業法務</strong>を中心に取り扱う法律事務所です。<br>
-      現在、弁護士7名体制のもと、案件増加に伴い、新たに弁護士を1名募集しています。<br>
+      2026年度の弁護士募集は終了しました。今後の募集再開時に再活用する可能性があるため、本ページは参考情報として掲載しています。<br>
       社会課題に向き合いながら、依頼者にとって本当に価値のあるリーガルサービスを提供したい方を歓迎します。
     </p>
     <p class="hero-branch-note">※2026年7月に八王子支店を開設しました。</p>
-    <div class="hero-contact-card">
-      <p class="hero-contact-title">事務所訪問・ZOOM説明会</p>
-      <p class="hero-contact-note">エントリー前に、事務所についてより詳しく知りたいという方に向けて、事務所訪問・ZOOM説明会を実施しています。正式な応募前のカジュアルな面談形式ですので、業務内容や働き方、事務所の雰囲気など、お気軽にご質問ください。</p>
-      <p class="hero-contact-hint">※Googleフォームに遷移します</p>
-      <a href="https://forms.gle/MJbS54GYNB88Q9176" target="_blank" rel="noopener noreferrer" class="hero-contact-btn">説明会・事務所訪問を申し込む →</a>
+    <div class="hero-contact-card is-closed">
+      <span class="closed-status-label">受付終了</span>
+      <p class="hero-contact-title">2026年度の募集は終了しました</p>
+      <p class="hero-contact-note">事務所訪問・ZOOM説明会および応募受付は、現在停止しています。募集を再開する場合は、本ページで改めてご案内します。</p>
+      <span class="hero-contact-btn is-disabled" aria-disabled="true">現在は受付していません</span>
     </div>
   </div>
 </section>
@@ -1289,8 +1320,9 @@
   <div class="section-inner">
     <div class="section-header fade-in" data-delay="0">
       <div class="section-tag">Job Details</div>
-      <h2>募集要項</h2>
+      <h2>募集要項（2026年度募集終了）</h2>
     </div>
+    <div class="recruitment-closed-note fade-in" data-delay="1">2026年度の募集は終了しました。以下の内容は、今後募集を再開する際の参考情報として掲載しています。</div>
     <table class="req-table fade-in" data-delay="1">
       <tbody>
         <tr>
@@ -1350,7 +1382,7 @@
         </tr>
         <tr>
           <th>応募締切</th>
-          <td>内定者決定次第締め切り</td>
+          <td>2026年度の募集は終了しました</td>
         </tr>
       </tbody>
     </table>
@@ -1362,6 +1394,7 @@
   <div class="section-inner">
     <div class="apply-header fade-in" data-delay="0">
       <h2>ZOOM説明会・事務所訪問／応募</h2>
+      <p class="closed-apply-note">2026年度の募集終了に伴い、現在は説明会・事務所訪問および応募受付を停止しています。</p>
     </div>
 
     <div class="apply-cards">
@@ -1373,10 +1406,10 @@
           </div>
           <h3>ZOOM説明会・事務所訪問</h3>
         </div>
-        <p>正式な応募前のカジュアルな面談形式ですので、業務内容や働き方、事務所の雰囲気など、お気軽にご質問ください。事務所訪問またはオンライン（ZOOM）、どちらでも対応可能です。</p>
+        <p>2026年度の募集終了に伴い、現在は事務所訪問およびオンライン説明会の受付を停止しています。</p>
         <div class="aci-foot">
-          <p style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 6px;">※Googleフォームに遷移します</p>
-          <a href="https://forms.gle/MJbS54GYNB88Q9176" target="_blank" rel="noopener noreferrer" class="aci-btn" style="font-size: 0.88rem; padding: 15px 14px; background: var(--navy); letter-spacing: 0.05em;">説明会・事務所訪問を申し込む →</a>
+          <p style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 6px;">※現在は受付を停止しています</p>
+          <span class="aci-btn is-disabled" style="font-size: 0.88rem; padding: 15px 14px; letter-spacing: 0.05em;" aria-disabled="true">受付終了</span>
         </div>
       </div>
 
@@ -1388,7 +1421,7 @@
           <h3>応募</h3>
         </div>
         <div class="aci-body">
-          <p>弊所への応募を希望される方は、下記書類を弊所までメール（送付先：info@shirato-law.com）にてご送付ください。</p>
+          <p>2026年度の募集は終了しました。今後募集を再開する場合は、改めて本ページでご案内します。</p>
           <ul class="aci-docs">
             <li>履歴書（写真付き、書式自由）</li>
             <li>成績表（大学・大学院・司法試験）</li>
@@ -1396,7 +1429,7 @@
           </ul>
         </div>
         <div class="aci-foot">
-          <a href="mailto:info@shirato-law.com" class="aci-btn" style="font-size: 0.88rem; padding: 15px 14px; background: var(--navy); letter-spacing: 0.05em;">応募書類を送付する →</a>
+          <span class="aci-btn is-disabled" style="font-size: 0.88rem; padding: 15px 14px; letter-spacing: 0.05em;" aria-disabled="true">応募受付終了</span>
         </div>
       </div>
 
